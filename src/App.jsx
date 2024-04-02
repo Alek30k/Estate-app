@@ -1,10 +1,14 @@
+import HomePage from "../routes/homePage/homePage";
 import Navbar from "./components/navbar/Navbar";
 import "./layout.scss";
 
 function App() {
   return (
     <div className="layout">
-      <Navbar />
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <HomePage />
     </div>
   );
 }
