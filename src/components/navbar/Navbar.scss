@@ -25,5 +25,18 @@ nav {
 
   .right {
     flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    a {
+      padding: 12px 24px;
+    }
+
+    .register {
+      background-color: #fece51;
+    }
   }
 }
