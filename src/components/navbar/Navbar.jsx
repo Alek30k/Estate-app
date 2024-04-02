@@ -18,6 +18,15 @@ const Navbar = () => {
         <a href="" className="register">
           Sign up
         </a>
+        <div className="menuIcon">
+          <img src="/menu.png" alt="menu-icon" />
+        </div>
+        <div className="menu">
+          <a href="">Home</a>
+          <a href="">About</a>
+          <a href="">Contact</a>
+          <a href="">Agents</a>
+        </div>
       </div>
     </nav>
   );
