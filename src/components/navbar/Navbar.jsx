@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <nav>
       <div className="left">
@@ -26,6 +28,8 @@ const Navbar = () => {
           <a href="">About</a>
           <a href="">Contact</a>
           <a href="">Agents</a>
+          <a href="">Sign in</a>
+          <a href="">Sign up</a>
         </div>
       </div>
     </nav>
