@@ -4,6 +4,14 @@ nav {
   justify-content: space-between;
   align-items: center;
 
+  a {
+    transition: all 0.4s ease;
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+
   .left {
     flex: 3;
     display: flex;
