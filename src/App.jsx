@@ -1,12 +1,9 @@
 import HomePage from "../routes/homePage/homePage";
 import ListPage from "../routes/listPage/ListPage";
-import Navbar from "./components/navbar/Navbar";
 import "./layout.scss";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 
 function App() {
