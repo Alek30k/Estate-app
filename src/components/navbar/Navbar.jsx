@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const user = false;
+  const user = true;
   return (
     <nav>
       <div className="left">
@@ -19,7 +19,7 @@ const Navbar = () => {
         <a href="">Agents</a>
       </div>
       <div className="right">
-        {!user ? (
+        {user ? (
           <div className="user">
             <img
               src="https://a.storyblok.com/f/191576/1200x800/faa88c639f/round_profil_picture_before_.webp"
