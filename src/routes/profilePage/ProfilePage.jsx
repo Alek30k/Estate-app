@@ -1,5 +1,4 @@
-import Chat from "../../components/chat/Chat";
-import List from "../../components/list/List";
+// import Chat from "../../components/chat/Chat";
 import "./profilePage.scss";
 
 function ProfilePage() {
@@ -30,17 +29,15 @@ function ProfilePage() {
             <h1>My List</h1>
             <button>Create New Post</button>
           </div>
-          <List />
+          {/* <List /> */}
           <div className="title">
             <h1>Saved List</h1>
           </div>
-          <List />
+          {/* <List /> */}
         </div>
       </div>
       <div className="chatContainer">
-        <div className="wrapper">
-          <Chat />
-        </div>
+        <div className="wrapper">{/* <Chat /> */}</div>
       </div>
     </div>
   );
