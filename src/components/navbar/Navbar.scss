@@ -24,6 +24,19 @@ nav {
     align-items: center;
     gap: 50px;
 
+    button {
+      padding: 16px 10px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      background-color: white;
+      text-transform: capitalize;
+
+      &.active {
+        border-bottom: 3px solid #fece51;
+      }
+    }
+
     .logo {
       font-weight: bold;
       font-size: 20px;

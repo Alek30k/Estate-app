@@ -7,6 +7,7 @@ import Layout from "./routes/layout/layout";
 import Login from "./routes/login/Login";
 import Register from "./routes/register/Register";
 import ProfilePage from "./routes/profilePage/ProfilePage";
+import AboutPage from "./routes/about/page";
 // import Login from "./routes/login/login";
 // import Register from "./routes/register/register";
 
@@ -31,6 +32,10 @@ function App() {
         {
           path: "/profile",
           element: <ProfilePage />,
+        },
+        {
+          path: "/about",
+          element: <AboutPage />,
         },
         {
           path: "/login",

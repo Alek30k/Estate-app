@@ -5,8 +5,16 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  console.log(query);
 
   const { currentUser } = useContext(AuthContext);
+
+  const count = ["home", "about", "contact", "agents"];
+
+  const switchType = (val) => {
+    setQuery(val);
+  };
 
   return (
     <nav>
@@ -15,10 +23,20 @@ const Navbar = () => {
           <img src="/logo.png" alt="logo" />
           <span>AleEstate</span>
         </a>
-        <a href="">Home</a>
+        {/* <a href="">Home</a>
         <a href="">About</a>
         <a href="">Contact</a>
-        <a href="">Agents</a>
+        <a href="">Agents</a> */}
+        {count.map((type) => (
+          <Link key={type} to={`/${type === "home" ? "/" : type}`}>
+            <button
+              onClick={() => switchType(type)}
+              className={query === type ? "active" : ""}
+            >
+              {type}
+            </button>
+          </Link>
+        ))}
       </div>
       <div className="right">
         {currentUser ? (
