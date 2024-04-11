@@ -3,6 +3,8 @@ import List from "../../components/list/List";
 import "./profilePage.scss";
 
 function ProfilePage() {
+  const handleLogout = () => {};
+
   return (
     <div className="profilePage">
       <div className="details">
@@ -25,7 +27,7 @@ function ProfilePage() {
             <span>
               E-mail: <b>john@gmail.com</b>
             </span>
-            <button>Logout</button>
+            <button onClick={handleLogout}>Logout</button>
           </div>
           <div className="title">
             <h1>My List</h1>
