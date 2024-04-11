@@ -31,12 +31,12 @@ const Navbar = () => {
             </Link>
           </div>
         ) : (
-          <>
-            <a href="">Sign in</a>
-            <a href="" className="register">
+          <div className="logged">
+            <a href="/login">Sign in</a>
+            <a href="/register" className="register">
               Sign up
             </a>
-          </>
+          </div>
         )}
         <div className="menuIcon">
           <img

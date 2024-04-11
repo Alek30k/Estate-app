@@ -105,8 +105,17 @@ nav {
       }
     }
 
-    .register {
-      background-color: #fece51;
+    .logged {
+      display: flex;
+      align-items: center;
+
+      .register {
+        background-color: #fece51;
+      }
+
+      @include sm {
+        display: none;
+      }
     }
 
     .menuIcon {
