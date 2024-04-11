@@ -13,9 +13,9 @@ nav {
       display: none;
     }
 
-    &:hover {
-      scale: 1.05;
-    }
+    // &:hover {
+    //   scale: 1.05;
+    // }
   }
 
   .left {
@@ -34,6 +34,7 @@ nav {
 
       &.active {
         border-bottom: 3px solid #fece51;
+        scale: 1.05;
       }
     }
 

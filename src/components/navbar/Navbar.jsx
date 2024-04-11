@@ -28,7 +28,7 @@ const Navbar = () => {
         <a href="">Contact</a>
         <a href="">Agents</a> */}
         {count.map((type) => (
-          <Link key={type} to={`/${type === "home" ? "/" : type}`}>
+          <Link key={type} to={`/${type === "home" ? "" : type}`}>
             <button
               onClick={() => switchType(type)}
               className={query === type ? "active" : ""}

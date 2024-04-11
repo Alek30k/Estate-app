@@ -8,6 +8,8 @@ import Login from "./routes/login/Login";
 import Register from "./routes/register/Register";
 import ProfilePage from "./routes/profilePage/ProfilePage";
 import AboutPage from "./routes/about/page";
+import ContactPage from "./routes/contact/page";
+import AgentsPage from "./routes/agents/page";
 // import Login from "./routes/login/login";
 // import Register from "./routes/register/register";
 
@@ -36,6 +38,14 @@ function App() {
         {
           path: "/about",
           element: <AboutPage />,
+        },
+        {
+          path: "/contact",
+          element: <ContactPage />,
+        },
+        {
+          path: "/agents",
+          element: <AgentsPage />,
         },
         {
           path: "/login",
