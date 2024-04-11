@@ -2,6 +2,7 @@ import axios from "axios";
 import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import apiRequest from "../../lib/apiRequest";
 
 function Login() {
   const [error, setError] = useState("");
@@ -19,7 +20,7 @@ function Login() {
     const password = formData.get("password");
 
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/register", {
+      const res = await apiRequest.post("/auth/login", {
         username,
         email,
         password,
@@ -53,7 +54,7 @@ function Login() {
             type="password"
             placeholder="Password"
           />
-          <button>Login</button>
+          <button disabled={isLoading}>Login</button>
           {error && <span>{error}</span>}
           <Link to="/register">{"Don't"} you have an account?</Link>
         </form>
