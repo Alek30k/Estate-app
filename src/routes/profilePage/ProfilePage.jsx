@@ -1,9 +1,19 @@
+import { Navigate } from "react-router-dom";
 import Chat from "../../components/chat/Chat";
 import List from "../../components/list/List";
+import apiRequest from "../../lib/apiRequest";
 import "./profilePage.scss";
 
 function ProfilePage() {
-  const handleLogout = () => {};
+  const handleLogout = async () => {
+    try {
+      await apiRequest.post("/auth/logout");
+      // updateUser(null);
+      Navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="profilePage">
