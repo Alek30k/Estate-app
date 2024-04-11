@@ -6,6 +6,7 @@ import Layout from "./routes/layout/layout";
 // import ProfilePage from "./routes/profilePage/profilePage";
 import Login from "./routes/login/Login";
 import Register from "./routes/register/Register";
+import ProfilePage from "./routes/profilePage/ProfilePage";
 // import Login from "./routes/login/login";
 // import Register from "./routes/register/register";
 
@@ -27,10 +28,10 @@ function App() {
         //   path: "/:id",
         //   element: <SinglePage />,
         // },
-        // {
-        //   path: "/profile",
-        //   element: <ProfilePage />,
-        // },
+        {
+          path: "/profile",
+          element: <ProfilePage />,
+        },
         {
           path: "/login",
           element: <Login />,
