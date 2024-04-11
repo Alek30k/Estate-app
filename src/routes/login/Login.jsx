@@ -25,9 +25,9 @@ function Login() {
         password,
       });
 
-      console.log(res);
+      localStorage.setItem("user", JSON.stringify(res.data));
 
-      //   navigate("/login");
+      navigate("/");
     } catch (error) {
       console.log(error);
       setError(error.response.data.message);
