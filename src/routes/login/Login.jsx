@@ -13,20 +13,21 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
     const formData = new FormData(e.target);
 
     const username = formData.get("username");
-    const email = formData.get("email");
     const password = formData.get("password");
 
     try {
       const res = await apiRequest.post("/auth/login", {
         username,
-        email,
         password,
       });
 
-      navigate("/login");
+      console.log(res);
+
+      //   navigate("/login");
     } catch (error) {
       console.log(error);
       setError(error.response.data.message);
