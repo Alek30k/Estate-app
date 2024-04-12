@@ -11,12 +11,6 @@ function ProfilePage() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!currentUser) {
-      navigate("/login");
-    }
-  }, [currentUser, navigate]);
-
   const handleLogout = async () => {
     try {
       await apiRequest.post("/auth/logout");
