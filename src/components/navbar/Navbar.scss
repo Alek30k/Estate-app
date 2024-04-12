@@ -133,6 +133,12 @@ nav {
         background-color: #fece51;
       }
 
+      a {
+        &:hover {
+          scale: 1.05;
+        }
+      }
+
       @include sm {
         display: none;
       }
