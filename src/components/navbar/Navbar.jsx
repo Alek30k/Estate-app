@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const { currentUser } = useContext(AuthContext);
 
-  const count = ["home", "about", "contact", "agents"];
+  const navLink = ["home", "about", "contact", "agents"];
 
   const switchType = (val) => {
     setQuery(val);
@@ -27,7 +27,7 @@ const Navbar = () => {
         <a href="">About</a>
         <a href="">Contact</a>
         <a href="">Agents</a> */}
-        {count.map((type) => (
+        {navLink.map((type) => (
           <Link key={type} to={`/${type === "home" ? "" : type}`}>
             <button
               onClick={() => switchType(type)}
