@@ -14,6 +14,7 @@ const Navbar = () => {
 
   const switchType = (val) => {
     setQuery(val);
+    setOpen(false);
   };
 
   return (
@@ -64,12 +65,22 @@ const Navbar = () => {
           />
         </div>
         <div className={open ? "menu active" : "menu"}>
-          <a href="/">Home</a>
+          {/* <a href="/">Home</a>
           <a href="/">About</a>
           <a href="/">Contact</a>
-          <a href="/">Agents</a>
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
+          <a href="/">Agents</a> */}
+          {navLink.map((type) => (
+            <Link key={type} to={`/${type === "home" ? "" : type}`}>
+              <button
+                onClick={() => switchType(type)}
+                className={query === type ? "active" : ""}
+              >
+                {type}
+              </button>
+            </Link>
+          ))}
+          <a href="/login">Sign in</a>
+          <a href="/register">Sign up</a>
         </div>
       </div>
     </nav>

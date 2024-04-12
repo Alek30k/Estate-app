@@ -25,8 +25,9 @@ nav {
     gap: 50px;
 
     button {
-      padding: 16px 10px;
+      padding: 10px 0px;
       font-size: 16px;
+      margin-right: 20px;
       border: none;
       cursor: pointer;
       background-color: white;
@@ -35,6 +36,11 @@ nav {
       &.active {
         border-bottom: 3px solid #fece51;
         scale: 1.05;
+        font-weight: bold;
+      }
+
+      @include md {
+        margin-right: 0px;
       }
     }
 
@@ -170,6 +176,14 @@ nav {
         a {
           display: initial;
         }
+      }
+      button {
+        font-size: 22px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        color: white;
+        text-transform: capitalize;
       }
     }
   }
