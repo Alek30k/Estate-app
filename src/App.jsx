@@ -7,6 +7,7 @@ import ProfilePage from "./routes/profilePage/ProfilePage";
 import AboutPage from "./routes/about/page";
 import ContactPage from "./routes/contact/page";
 import AgentsPage from "./routes/agents/page";
+import ProfileUpdatePage from "./routes/profileUpdatePage/ProfileUpdatePage";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,10 +50,10 @@ function App() {
           element: <ProfilePage />,
           // loader: profilePageLoader
         },
-        // {
-        //   path: "/profile/update",
-        //   element: <ProfileUpdatePage />,
-        // },
+        {
+          path: "/profile/update",
+          element: <ProfileUpdatePage />,
+        },
         // {
         //   path: "/add",
         //   element: <NewPostPage />,

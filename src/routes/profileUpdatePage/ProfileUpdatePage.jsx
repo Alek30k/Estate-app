@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import "./profileUpdatePage.scss";
-import { AuthContext } from "../../context/AuthContext";
+// import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
 import { useNavigate } from "react-router-dom";
-import UploadWidget from "../../components/uploadWidget/UploadWidget";
+import { AuthContext } from "../../context/AuthContext";
+// import UploadWidget from "../../components/uploadWidget/UploadWidget";
 
 const ProfileUpdatePage = () => {
   const { currentUser, updateUser } = useContext(AuthContext);
@@ -71,7 +72,7 @@ const ProfileUpdatePage = () => {
             alt=""
             className="avatar"
           />
-          <UploadWidget
+          {/* <UploadWidget
             uwConfig={{
               cloudName: "lamadev",
               uploadPreset: "estate",
@@ -80,7 +81,7 @@ const ProfileUpdatePage = () => {
               folder: "avatars",
             }}
             setState={setAvatar}
-          />
+          /> */}
         </div>
       </div>
     </div>
