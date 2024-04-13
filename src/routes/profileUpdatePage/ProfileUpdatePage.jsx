@@ -67,7 +67,7 @@ const ProfileUpdatePage = () => {
         </div>
         <div className="sideContainer">
           <img
-            src={avatar[0] || currentUser.avatar || "/noavatar.jpg"}
+            src={avatar[0] || currentUser.avatar || "/noavatar.jpeg"}
             alt=""
             className="avatar"
           />
