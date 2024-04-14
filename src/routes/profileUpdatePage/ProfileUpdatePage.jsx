@@ -3,6 +3,7 @@ import "./profileUpdatePage.scss";
 import apiRequest from "../../lib/apiRequest";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import UploadWidget from "../../components/uploadWidget/UploadWidget";
 // import UploadWidget from "../../components/uploadWidget/UploadWidget";
 
 const ProfileUpdatePage = () => {
@@ -62,7 +63,7 @@ const ProfileUpdatePage = () => {
               <input id="password" name="password" type="password" />
             </div>
             <button>Update</button>
-            {error && <span>error</span>}
+            {error && <span>{error}</span>}
           </form>
         </div>
         <div className="sideContainer">
@@ -71,16 +72,16 @@ const ProfileUpdatePage = () => {
             alt=""
             className="avatar"
           />
-          {/* <UploadWidget
+          <UploadWidget
             uwConfig={{
-              cloudName: "lamadev",
+              cloudName: "dztl3rtlc",
               uploadPreset: "estate",
               multiple: false,
               maxImageFileSize: 2000000,
               folder: "avatars",
             }}
             setState={setAvatar}
-          /> */}
+          />
         </div>
       </div>
     </div>
