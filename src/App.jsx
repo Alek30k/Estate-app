@@ -8,6 +8,7 @@ import AboutPage from "./routes/about/page";
 import ContactPage from "./routes/contact/page";
 import AgentsPage from "./routes/agents/page";
 import ProfileUpdatePage from "./routes/profileUpdatePage/ProfileUpdatePage";
+import ListPage from "./routes/listPage/ListPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,11 @@ function App() {
         {
           path: "/",
           element: <HomePage />,
+        },
+        {
+          path: "/list",
+          element: <ListPage />,
+          // loader: listPageLoader,
         },
         {
           path: "/about",
