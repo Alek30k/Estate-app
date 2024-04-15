@@ -160,7 +160,7 @@ const NewPostPage = () => {
       </div>
       <div className="sideContainer">
         {images.map((image, index) => (
-          <img src={image} key={index} alt="" />
+          <img src={image} key={index} alt="image" />
         ))}
         <UploadWidget
           uwConfig={{
