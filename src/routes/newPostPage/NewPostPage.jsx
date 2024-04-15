@@ -1,6 +1,15 @@
+import { useState } from "react";
 import "./newPostPage.scss";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const NewPostPage = () => {
+  const [value, setValue] = useState("");
+  //   const [images, setImages] = useState([]);
+  //   const [error, setError] = useState("");
+
+  //   const navigate = useNavigate()
+
   return (
     <div className="newPostPage">
       <div className="formContainer">
@@ -22,7 +31,8 @@ const NewPostPage = () => {
             </div>
             <div className="item description">
               <label htmlFor="desc">Description</label>
-              {/* <ReactQuill theme="snow" onChange={setValue} value={value} /> */}
+
+              <ReactQuill theme="snow" onChange={setValue} value={value} />
             </div>
             <div className="item">
               <label htmlFor="city">City</label>

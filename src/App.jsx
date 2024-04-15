@@ -9,6 +9,7 @@ import ContactPage from "./routes/contact/page";
 import AgentsPage from "./routes/agents/page";
 import ProfileUpdatePage from "./routes/profileUpdatePage/ProfileUpdatePage";
 import ListPage from "./routes/listPage/ListPage";
+import NewPostPage from "./routes/newPostPage/NewPostPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -60,10 +61,10 @@ function App() {
           path: "/profile/update",
           element: <ProfileUpdatePage />,
         },
-        // {
-        //   path: "/add",
-        //   element: <NewPostPage />,
-        // },
+        {
+          path: "/add",
+          element: <NewPostPage />,
+        },
       ],
     },
   ]);
