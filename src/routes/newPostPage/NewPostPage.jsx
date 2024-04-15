@@ -4,6 +4,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
+import UploadWidget from "../../components/uploadWidget/UploadWidget";
 
 const NewPostPage = () => {
   const [value, setValue] = useState("");
@@ -161,15 +162,15 @@ const NewPostPage = () => {
         {images.map((image, index) => (
           <img src={image} key={index} alt="" />
         ))}
-        {/* <UploadWidget
-      uwConfig={{
-        multiple: true,
-        cloudName: "lamadev",
-        uploadPreset: "estate",
-        folder: "posts",
-      }}
-      setState={setImages}
-    /> */}
+        <UploadWidget
+          uwConfig={{
+            multiple: true,
+            cloudName: "lamadev",
+            uploadPreset: "estate",
+            folder: "posts",
+          }}
+          setState={setImages}
+        />
       </div>
     </div>
   );
