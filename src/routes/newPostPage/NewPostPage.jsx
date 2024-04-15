@@ -158,9 +158,9 @@ const NewPostPage = () => {
         </div>
       </div>
       <div className="sideContainer">
-        {/* {images.map((image, index) => (
-      <img src={image} key={index} alt="" />
-    ))} */}
+        {images.map((image, index) => (
+          <img src={image} key={index} alt="" />
+        ))}
         {/* <UploadWidget
       uwConfig={{
         multiple: true,
