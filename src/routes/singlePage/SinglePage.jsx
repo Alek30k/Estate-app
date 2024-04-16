@@ -13,19 +13,19 @@ function SinglePage() {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // const handleSave = async () => {
-  //   if (!currentUser) {
-  //     navigate("/login");
-  //   }
-  //   // AFTER REACT 19 UPDATE TO USEOPTIMISTIK HOOK
-  //   setSaved((prev) => !prev);
-  //   try {
-  //     await apiRequest.post("/users/save", { postId: post.id });
-  //   } catch (err) {
-  //     console.log(err);
-  //     setSaved((prev) => !prev);
-  //   }
-  // };
+  const handleSave = async () => {
+    if (!currentUser) {
+      navigate("/login");
+    }
+    // AFTER REACT 19 UPDATE TO USEOPTIMISTIK HOOK
+    setSaved((prev) => !prev);
+    try {
+      await apiRequest.post("/users/save", { postId: post.id });
+    } catch (err) {
+      console.log(err);
+      setSaved((prev) => !prev);
+    }
+  };
 
   return (
     <div className="singlePage">
@@ -144,7 +144,7 @@ function SinglePage() {
               Send a Message
             </button>
             <button
-              // onClick={handleSave}
+              onClick={handleSave}
               style={{
                 backgroundColor: saved ? "#fece51" : "white",
               }}
