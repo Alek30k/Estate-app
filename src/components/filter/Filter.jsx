@@ -4,7 +4,6 @@ import { useSearchParams } from "react-router-dom";
 
 function Filter() {
   const [searchParams, setSearchParams] = useSearchParams();
-
   const [query, setQuery] = useState({
     type: searchParams.get("type") || "",
     city: searchParams.get("city") || "",
@@ -63,7 +62,7 @@ function Filter() {
             name="property"
             id="property"
             onChange={handleChange}
-            defaultValue={query.type}
+            defaultValue={query.property}
           >
             <option value="">any</option>
             <option value="apartment">Apartment</option>
@@ -80,7 +79,7 @@ function Filter() {
             name="minPrice"
             placeholder="any"
             onChange={handleChange}
-            defaultValue={query.type}
+            defaultValue={query.minPrice}
           />
         </div>
         <div className="item">
@@ -91,7 +90,7 @@ function Filter() {
             name="maxPrice"
             placeholder="any"
             onChange={handleChange}
-            defaultValue={query.type}
+            defaultValue={query.maxPrice}
           />
         </div>
         <div className="item">
@@ -102,7 +101,7 @@ function Filter() {
             name="bedroom"
             placeholder="any"
             onChange={handleChange}
-            defaultValue={query.type}
+            defaultValue={query.bedroom}
           />
         </div>
         <button onClick={handleFilter}>
