@@ -38,13 +38,20 @@ function Filter() {
             id="city"
             name="city"
             placeholder="City Location"
+            onChange={handleChange}
+            defaultValue={query.city}
           />
         </div>
       </div>
       <div className="bottom">
         <div className="item">
           <label htmlFor="type">Type</label>
-          <select name="type" id="type">
+          <select
+            name="type"
+            id="type"
+            onChange={handleChange}
+            defaultValue={query.type}
+          >
             <option value="">any</option>
             <option value="buy">Buy</option>
             <option value="rent">Rent</option>
@@ -52,7 +59,12 @@ function Filter() {
         </div>
         <div className="item">
           <label htmlFor="property">Property</label>
-          <select name="property" id="property">
+          <select
+            name="property"
+            id="property"
+            onChange={handleChange}
+            defaultValue={query.type}
+          >
             <option value="">any</option>
             <option value="apartment">Apartment</option>
             <option value="house">House</option>
@@ -67,17 +79,33 @@ function Filter() {
             id="minPrice"
             name="minPrice"
             placeholder="any"
+            onChange={handleChange}
+            defaultValue={query.type}
           />
         </div>
         <div className="item">
           <label htmlFor="maxPrice">Max Price</label>
-          <input type="text" id="maxPrice" name="maxPrice" placeholder="any" />
+          <input
+            type="text"
+            id="maxPrice"
+            name="maxPrice"
+            placeholder="any"
+            onChange={handleChange}
+            defaultValue={query.type}
+          />
         </div>
         <div className="item">
           <label htmlFor="bedroom">Bedroom</label>
-          <input type="text" id="bedroom" name="bedroom" placeholder="any" />
+          <input
+            type="text"
+            id="bedroom"
+            name="bedroom"
+            placeholder="any"
+            onChange={handleChange}
+            defaultValue={query.type}
+          />
         </div>
-        <button>
+        <button onClick={handleFilter}>
           <img src="/search.png" alt="" />
         </button>
       </div>
