@@ -19,17 +19,17 @@ function Chat({ chats }) {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chat]);
 
-  // const handleOpenChat = async (id, receiver) => {
-  //   try {
-  //     const res = await apiRequest("/chats/" + id);
-  //     if (!res.data.seenBy.includes(currentUser.id)) {
-  //       decrease();
-  //     }
-  //     setChat({ ...res.data, receiver });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const handleOpenChat = async (id, receiver) => {
+    try {
+      const res = await apiRequest("/chats/" + id);
+      // if (!res.data.seenBy.includes(currentUser.id)) {
+      //   decrease();
+      // }
+      setChat({ ...res.data, receiver });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleSubmit = async (e) => {
     // e.preventDefault();
@@ -85,7 +85,7 @@ function Chat({ chats }) {
                   ? "white"
                   : "#fecd514e",
             }}
-            // onClick={() => handleOpenChat(chat.id, c.receiver)}
+            onClick={() => handleOpenChat(chat.id, chat.receiver)}
           >
             <img src={chat.receiver.avatar || "/noavatar.jpeg"} alt="" />
             <span>{chat.receiver.username}</span>
@@ -97,7 +97,7 @@ function Chat({ chats }) {
         <div className="chatBox">
           <div className="top">
             <div className="user">
-              <img src={chat.receiver.avatar || "noavatar.jpg"} alt="" />
+              <img src={chat.receiver.avatar || "noavatar.jpeg"} alt="" />
               {chat.receiver.username}
             </div>
             <span className="close" onClick={() => setChat(null)}>
