@@ -1,8 +1,8 @@
-import { Await, Link, useLoaderData, useNavigate } from "react-router-dom";
 import Chat from "../../components/chat/Chat";
 import List from "../../components/list/List";
-import apiRequest from "../../lib/apiRequest";
 import "./profilePage.scss";
+import apiRequest from "../../lib/apiRequest";
+import { Await, Link, useLoaderData, useNavigate } from "react-router-dom";
 import { Suspense, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -17,13 +17,11 @@ function ProfilePage() {
     try {
       await apiRequest.post("/auth/logout");
       updateUser(null);
-      // updateUser(null);
       navigate("/");
     } catch (err) {
       console.log(err);
     }
   };
-
   return (
     <div className="profilePage">
       <div className="details">
@@ -37,7 +35,7 @@ function ProfilePage() {
           <div className="info">
             <span>
               Avatar:
-              <img src={currentUser.avatar || "/noavatar.jpeg"} alt="" />
+              <img src={currentUser.avatar || "noavatar.jpg"} alt="" />
             </span>
             <span>
               Username: <b>{currentUser.username}</b>
