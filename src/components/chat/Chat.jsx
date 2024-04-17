@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import "./chat.scss";
 import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
-// import { format } from "timeago.js";
+import { format } from "timeago.js";
 // import { SocketContext } from "../../context/SocketContext";
 // import { useNotificationStore } from "../../lib/notificationStore";
 
@@ -32,21 +32,21 @@ function Chat({ chats }) {
   };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    // const formData = new FormData(e.target);
-    // const text = formData.get("text");
-    // if (!text) return;
-    // try {
-    //   const res = await apiRequest.post("/messages/" + chat.id, { text });
-    //   setChat((prev) => ({ ...prev, messages: [...prev.messages, res.data] }));
-    //   e.target.reset();
-    //   socket.emit("sendMessage", {
-    //     receiverId: chat.receiver.id,
-    //     data: res.data,
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const text = formData.get("text");
+    if (!text) return;
+    try {
+      const res = await apiRequest.post("/messages/" + chat.id, { text });
+      setChat((prev) => ({ ...prev, messages: [...prev.messages, res.data] }));
+      e.target.reset();
+      // socket.emit("sendMessage", {
+      //   receiverId: chat.receiver.id,
+      //   data: res.data,
+      // });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   // useEffect(() => {
@@ -119,7 +119,7 @@ function Chat({ chats }) {
                 key={message.id}
               >
                 <p>{message.text}</p>
-                {/* <span>{format(message.createdAt)}</span> */}
+                <span>{format(message.createdAt)}</span>
               </div>
             ))}
             <div ref={messageEndRef}></div>
