@@ -1,21 +1,22 @@
-import HomePage from "./routes/homePage/homePage";
+// import HomePage from "./routes/homePage/page";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout, RequireAuth } from "./routes/layout/layout";
-import Login from "./routes/login/Login";
-import Register from "./routes/register/Register";
-import ProfilePage from "./routes/profilePage/ProfilePage";
+import Login from "./routes/login/page";
+import Register from "./routes/register/page";
+import ProfilePage from "./routes/profilePage/page";
 import AboutPage from "./routes/about/page";
 import ContactPage from "./routes/contact/page";
 import AgentsPage from "./routes/agents/page";
-import ProfileUpdatePage from "./routes/profileUpdatePage/ProfileUpdatePage";
-import ListPage from "./routes/listPage/ListPage";
-import NewPostPage from "./routes/newPostPage/NewPostPage";
-import SinglePage from "./routes/singlePage/SinglePage";
+import ProfileUpdatePage from "./routes/profileUpdatePage/page";
+import ListPage from "./routes/listPage/page";
+import NewPostPage from "./routes/newPostPage/page";
+import SinglePage from "./routes/singlePage/page";
 import {
   listPageLoader,
   profilePageLoader,
   singlePageLoader,
 } from "./lib/loaders";
+import HomePage from "./routes/homePage/page";
 
 function App() {
   const router = createBrowserRouter([
