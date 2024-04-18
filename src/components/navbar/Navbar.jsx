@@ -57,10 +57,10 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="logged">
-            <a href="/login">Sign in</a>
-            <a href="/register" className="register">
+            <Link to="/login">Sign in</Link>
+            <Link to="/register" className="register">
               Sign up
-            </a>
+            </Link>
           </div>
         )}
         <div className="menuIcon">
