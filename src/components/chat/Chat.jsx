@@ -33,8 +33,10 @@ function Chat({ chats }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const formData = new FormData(e.target);
     const text = formData.get("text");
+
     if (!text) return;
     try {
       const res = await apiRequest.post("/messages/" + chat.id, { text });
@@ -75,21 +77,21 @@ function Chat({ chats }) {
     <div className="chat">
       <div className="messages">
         <h1>Messages</h1>
-        {chats?.map((chat) => (
+        {chats?.map((c) => (
           <div
             className="message"
-            key={chat.id}
+            key={c.id}
             style={{
               backgroundColor:
-                chat.seenBy.includes(currentUser.id) || chat?.id === chat.id
+                c.seenBy.includes(currentUser.id) || chat?.id === c.id
                   ? "white"
                   : "#fecd514e",
             }}
-            onClick={() => handleOpenChat(chat.id, chat.receiver)}
+            onClick={() => handleOpenChat(c.id, c.receiver)}
           >
-            <img src={chat.receiver.avatar || "/noavatar.jpeg"} alt="" />
-            <span>{chat.receiver.username}</span>
-            <p>{chat.lastMessage}</p>
+            <img src={c.receiver.avatar || "/noavatar.jpeg"} alt="" />
+            <span>{c.receiver.username}</span>
+            <p>{c.lastMessage}</p>
           </div>
         ))}
       </div>
