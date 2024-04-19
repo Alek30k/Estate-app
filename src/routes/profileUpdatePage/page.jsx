@@ -4,6 +4,7 @@ import apiRequest from "../../lib/apiRequest";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import UploadWidget from "../../components/uploadWidget/UploadWidget";
+import axios from "axios";
 // import UploadWidget from "../../components/uploadWidget/UploadWidget";
 
 const ProfileUpdatePage = () => {
@@ -20,12 +21,15 @@ const ProfileUpdatePage = () => {
     const { username, email, password } = Object.fromEntries(formData);
 
     try {
-      const res = await apiRequest.put(`/users/${currentUser.id}`, {
-        username,
-        email,
-        password,
-        avatar: avatar[0],
-      });
+      const res = await axios.put(
+        `https://estate-app-backend-rrai.onrender.com/api/users/${currentUser.id}`,
+        {
+          username,
+          email,
+          password,
+          avatar: avatar[0],
+        }
+      );
       updateUser(res.data);
       navigate("/profile");
     } catch (err) {
