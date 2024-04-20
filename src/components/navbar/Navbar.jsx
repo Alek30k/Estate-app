@@ -9,7 +9,6 @@ const Navbar = () => {
   const [query, setQuery] = useState("");
 
   const { currentUser } = useContext(AuthContext);
-
   // const fetch = useNotificationStore((state) => state.fetch);
   // const number = useNotificationStore((state) => state.number);
 
@@ -28,6 +27,7 @@ const Navbar = () => {
         <a href="/" className="logo">
           <img src="/logo.png" alt="logo" />
           <span>AleEstate</span>
+          <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
         </a>
         {/* <a href="">Home</a>
         <a href="">About</a>
