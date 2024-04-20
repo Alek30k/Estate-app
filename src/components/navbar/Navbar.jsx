@@ -49,11 +49,12 @@ const Navbar = () => {
           <div className="user">
             <img src={currentUser.avatar || "/noavatar.jpeg"} alt="profile" />
             <span>{currentUser.username}</span>
-            <Link to="/profile" className="profile">
+            <span>Profile</span>
+            {/* <Link to="/profile" className="profile">
               {number > 0 && <div className="notification">{number}</div>}
 
               <span>Profile</span>
-            </Link>
+            </Link> */}
           </div>
         ) : (
           <div className="logged">
