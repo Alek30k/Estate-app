@@ -13,7 +13,7 @@ const Navbar = () => {
   // const fetch = useNotificationStore((state) => state.fetch);
   // const number = useNotificationStore((state) => state.number);
 
-  if (currentUser) fetch();
+  // if (currentUser) fetch();
 
   const navLink = ["home", "about", "contact", "agents"];
 
