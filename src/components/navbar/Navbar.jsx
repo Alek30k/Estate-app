@@ -2,11 +2,14 @@ import { useContext, useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import ThemeContext from "../../context/ThemeContext";
 // import { useNotificationStore } from "../../lib/notificationStore";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
+
+  const { theme, handleTheme } = useContext(ThemeContext);
 
   const { currentUser } = useContext(AuthContext);
   // const fetch = useNotificationStore((state) => state.fetch);
@@ -27,7 +30,26 @@ const Navbar = () => {
         <a href="/" className="logo">
           <img src="/logo.png" alt="logo" />
           <span>AleEstate</span>
-          <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+          <select name="language">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+          <input
+            type="radio"
+            name="theme"
+            id="light"
+            onClick={handleTheme}
+            value="light"
+          />
+          <label htmlFor="light">claro</label>
+          <input
+            type="radio"
+            name="theme"
+            id="dark"
+            onClick={handleTheme}
+            value="dark"
+          />
+          <label htmlFor="dark">oscuro</label>
         </a>
         {/* <a href="">Home</a>
         <a href="">About</a>

@@ -1,19 +1,24 @@
 import "./layout.scss";
 import { Navigate, Outlet } from "react-router-dom";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "./context/AuthContext";
+import ThemeContext from "./context/ThemeContext";
 
 function Layout() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="layout">
-      <div className="navbar">
-        <Navbar />
+    <body className={theme}>
+      <div className="layout">
+        <div className="navbar">
+          <Navbar />
+        </div>
+        <div className={`content ${theme}`}>
+          <Outlet />
+        </div>
       </div>
-      <div className="content">
-        <Outlet />
-      </div>
-    </div>
+    </body>
   );
 }
 

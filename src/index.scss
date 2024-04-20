@@ -13,3 +13,8 @@ body {
   font-family: "Lato", sans-serif;
   overflow: hidden;
 }
+
+.dark {
+  background-color: white;
+  filter: invert(1);
+}

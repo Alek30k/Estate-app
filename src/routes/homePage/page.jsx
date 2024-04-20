@@ -1,15 +1,18 @@
 // import SearchBar from "../../components/searchBar/SearchBar";
 // import { useContext } from "react";
+import { useContext } from "react";
 import SearchBar from "../../components/searchBar/SearchBar";
 import "./homePage.scss";
+import ThemeContext from "../../context/ThemeContext";
 // import { AuthContext } from "../../context/AuthContext";
 
 function HomePage() {
   // const { currentUser } = useContext(AuthContext);
+  const { theme } = useContext(ThemeContext);
 
   // console.log(currentUser);
   return (
-    <div className="homePage">
+    <div className={`homePage ${theme}`}>
       <div className="textContainer">
         <div className="wrapper">
           <h1 className="title">Find Real Estate & Get Your Dream Place</h1>

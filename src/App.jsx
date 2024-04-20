@@ -1,6 +1,6 @@
 // import HomePage from "./routes/homePage/page";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Layout, RequireAuth } from "./routes/layout/layout";
+import { Layout, RequireAuth } from "./layout";
 import Login from "./routes/login/page";
 import Register from "./routes/register/page";
 import ProfilePage from "./routes/profilePage/page";
@@ -17,6 +17,7 @@ import {
   singlePageLoader,
 } from "./lib/loaders";
 import HomePage from "./routes/homePage/page";
+import "./index.scss";
 
 function App() {
   const router = createBrowserRouter([

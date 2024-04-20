@@ -1,4 +1,4 @@
-@import "../../responsive.scss";
+@import "./responsive.scss";
 
 .layout {
   height: 100vh;
@@ -9,6 +9,7 @@
   padding-right: 20px;
   display: flex;
   flex-direction: column;
+  color: black;
 
   @include lg {
     // background-color: rgb(247, 210, 196);
