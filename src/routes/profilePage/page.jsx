@@ -5,11 +5,14 @@ import apiRequest from "../../lib/apiRequest";
 import { Await, Link, useLoaderData, useNavigate } from "react-router-dom";
 import { Suspense, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import ThemeContext from "../../context/ThemeContext";
 
 function ProfilePage() {
   const data = useLoaderData();
 
   const { updateUser, currentUser } = useContext(AuthContext);
+
+  const { theme } = useContext(ThemeContext);
 
   const navigate = useNavigate();
 
@@ -23,7 +26,7 @@ function ProfilePage() {
     }
   };
   return (
-    <div className="profilePage">
+    <div className={`profilePage ${theme}`}>
       <div className="details">
         <div className="wrapper">
           <div className="title">

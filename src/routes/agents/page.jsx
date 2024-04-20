@@ -1,5 +1,11 @@
+import { useContext } from "react";
+import ThemeContext from "../../context/ThemeContext";
+import "./agents.scss";
+
 const AgentsPage = () => {
-  return <div className="">AgentsPage</div>;
+  const { theme } = useContext(ThemeContext);
+
+  return <div className={`agents ${theme}`}>AgentsPage</div>;
 };
 
 export default AgentsPage;

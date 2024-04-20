@@ -1,16 +1,19 @@
 import { useContext, useState } from "react";
 import "./profileUpdatePage.scss";
-import apiRequest from "../../lib/apiRequest";
+// import apiRequest from "../../lib/apiRequest";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import UploadWidget from "../../components/uploadWidget/UploadWidget";
 import axios from "axios";
+import ThemeContext from "../../context/ThemeContext";
 // import UploadWidget from "../../components/uploadWidget/UploadWidget";
 
 const ProfileUpdatePage = () => {
   const { currentUser, updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [avatar, setAvatar] = useState([]);
+
+  const { theme } = useContext(ThemeContext);
 
   const navigate = useNavigate();
 
@@ -39,7 +42,7 @@ const ProfileUpdatePage = () => {
   };
 
   return (
-    <div className="">
+    <div className={theme}>
       <div className="profileUpdatePage">
         <div className="formContainer">
           <form onSubmit={handleSubmit}>

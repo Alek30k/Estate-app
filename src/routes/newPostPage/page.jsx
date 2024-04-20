@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./newPostPage.scss";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
 import UploadWidget from "../../components/uploadWidget/UploadWidget";
+import ThemeContext from "../../context/ThemeContext";
 
 const NewPostPage = () => {
   const [value, setValue] = useState("");
@@ -12,6 +13,8 @@ const NewPostPage = () => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+
+  const { theme } = useContext(ThemeContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,7 +55,7 @@ const NewPostPage = () => {
   };
 
   return (
-    <div className="newPostPage">
+    <div className={`newPostPage ${theme}`}>
       <div className="formContainer">
         <h1>Add New Post</h1>
         <div className="wrapper">

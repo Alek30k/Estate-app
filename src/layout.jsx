@@ -25,17 +25,21 @@ function Layout() {
 function RequireAuth() {
   const { currentUser } = useContext(AuthContext);
 
+  const { theme } = useContext(ThemeContext);
+
   if (!currentUser) return <Navigate to="/login" />;
   else {
     return (
-      <div className="layout">
-        <div className="navbar">
-          <Navbar />
+      <body className={theme}>
+        <div className="layout">
+          <div className="navbar">
+            <Navbar />
+          </div>
+          <div className={`content ${theme}`}>
+            <Outlet />
+          </div>
         </div>
-        <div className="content">
-          <Outlet />
-        </div>
-      </div>
+      </body>
     );
   }
 }
