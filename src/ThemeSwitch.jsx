@@ -7,14 +7,18 @@ import "./themeSwitch.css";
 export const ThemeSwitch = () => {
   const { theme, handleTheme } = useContext(ThemeContext);
 
-  console.log(theme);
-
   return (
     <div className="dark_mode">
-      <input className="dark_mode_input" type="checkbox" id="darkmode-toggle" />
+      <input
+        className="dark_mode_input"
+        type="checkbox"
+        id="darkmode-toggle"
+        onClick={handleTheme}
+      />
       <label className="dark_mode_label" htmlFor="darkmode-toggle">
-        <Sun onClick={handleTheme} value="light" />
-        <Moon onClick={handleTheme} value="dark" />
+        <Sun />
+
+        <Moon />
       </label>
     </div>
   );
