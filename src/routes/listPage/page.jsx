@@ -3,13 +3,16 @@ import "./listPage.scss";
 import Card from "../../components/card/Card";
 import Map from "../../components/map/Map";
 import { Await, useLoaderData } from "react-router-dom";
-import { Suspense } from "react";
+import { Suspense, useContext } from "react";
+import ThemeContext from "../../context/ThemeContext";
 
 function ListPage() {
   const data = useLoaderData();
 
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="listPage">
+    <div className={`listPage  ${theme === "dark" ? "listDark" : ""}`}>
       <div className="listContainer">
         <div className="wrapper">
           <Filter />
@@ -27,7 +30,11 @@ function ListPage() {
           </Suspense>
         </div>
       </div>
-      <div className="mapContainer">
+      <div
+        className={`mapContainer  ${
+          theme === "dark" ? "mapContainerDark" : ""
+        }`}
+      >
         <Suspense fallback={<p>Loading...</p>}>
           <Await
             resolve={data.postResponse}

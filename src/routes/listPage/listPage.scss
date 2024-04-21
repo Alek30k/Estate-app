@@ -1,5 +1,11 @@
 @import "../../responsive.scss";
 
+.listDark {
+  background-color: black;
+  display: flex;
+  height: 100%;
+  color: white;
+}
 .listPage {
   display: flex;
   height: 100%;
@@ -18,6 +24,14 @@
       padding-bottom: 50px;
     }
   }
+
+  .mapContainerDark {
+    flex: 2;
+    height: 100%;
+    color: black;
+    background-color: #fcf5f3;
+  }
+
   .mapContainer {
     flex: 2;
     height: 100%;
