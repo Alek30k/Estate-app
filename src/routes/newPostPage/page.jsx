@@ -156,7 +156,11 @@ const NewPostPage = () => {
               <label htmlFor="restaurant">Restaurant</label>
               <input min={0} id="restaurant" name="restaurant" type="number" />
             </div>
-            <button className="sendButton">Add</button>
+            <button
+              className={` ${theme === "dark" ? "buttonDark" : "sendButton "}`}
+            >
+              Add
+            </button>
             {error && <span>{error}</span>}
           </form>
         </div>
