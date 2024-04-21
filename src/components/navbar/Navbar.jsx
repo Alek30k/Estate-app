@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import ThemeContext from "../../context/ThemeContext";
 // import { useNotificationStore } from "../../lib/notificationStore";
+// import ThemeSwitch from "../../ThemeSwitch";
+import { ThemeSwitch } from "../../ThemeSwitch";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -30,11 +32,8 @@ const Navbar = () => {
         <a href="/" className="logo">
           <img src="/logo.png" alt="logo" />
           <span>AleEstate</span>
-          <select name="language">
-            <option value="es">ES</option>
-            <option value="en">EN</option>
-          </select>
-          <input
+
+          {/* <input
             type="radio"
             name="theme"
             id="light"
@@ -49,7 +48,8 @@ const Navbar = () => {
             onClick={handleTheme}
             value="dark"
           />
-          <label htmlFor="dark">oscuro</label>
+          <label htmlFor="dark">oscuro</label> */}
+          <ThemeSwitch />
         </a>
         {/* <a href="">Home</a>
         <a href="">About</a>
@@ -66,13 +66,16 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div className="right">
+      <div className={`right  ${theme === "dark" && "leftTheme"}`}>
         {currentUser ? (
           <div className="user">
             <img src={currentUser.avatar || "/noavatar.jpeg"} alt="profile" />
             <span>{currentUser.username}</span>
 
-            <Link to="/profile" className="profile">
+            <Link
+              to="/profile"
+              className={`  ${theme === "dark" ? "profileDark" : "profile"}`}
+            >
               <span>Profile</span>
             </Link>
             {/* <Link to="/profile" className="profile">

@@ -12,8 +12,8 @@ function HomePage() {
 
   // console.log(currentUser);
   return (
-    <div className={`homePage ${theme}`}>
-      <div className="textContainer">
+    <div className="homePage">
+      <div className={`textContainer ${theme}`}>
         <div className="wrapper">
           <h1 className="title">Find Real Estate & Get Your Dream Place</h1>
           <p>

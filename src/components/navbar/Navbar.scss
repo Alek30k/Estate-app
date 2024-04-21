@@ -5,6 +5,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  // border-bottom: 1px solid rgb(101, 120, 138);
 
   a {
     transition: all 0.4s ease;
@@ -66,12 +67,18 @@ nav {
       }
     }
   }
+
+  .leftTheme {
+    background-color: #040f2d;
+    color: white;
+  }
+
   .right {
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: #fcf5f3;
+    // background-color: #fff0d7;
     height: 100%;
 
     @include md {
@@ -102,6 +109,9 @@ nav {
         }
       }
 
+      .profileDark {
+        background-color: #073dd0;
+      }
       .profile {
         padding: 12px 24px;
         background-color: #fece51;
