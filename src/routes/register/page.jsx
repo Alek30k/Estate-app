@@ -1,12 +1,14 @@
 import "./register.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import apiRequest from "../../lib/apiRequest";
+import ThemeContext from "../../context/ThemeContext";
 
 function Register() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -37,7 +39,7 @@ function Register() {
   };
 
   return (
-    <div className="register">
+    <div className={`register  ${theme === "dark" ? "registerDark" : ""}`}>
       <div className="formContainer">
         <form onSubmit={handleSubmit}>
           <h1>Create an Account</h1>

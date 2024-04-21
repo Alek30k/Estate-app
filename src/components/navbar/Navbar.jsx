@@ -71,7 +71,10 @@ const Navbar = () => {
         ) : (
           <div className="logged">
             <Link to="/login">Sign in</Link>
-            <Link to="/register" className="register">
+            <Link
+              to="/register"
+              className={`  ${theme === "dark" ? "signupDark" : "register"}`}
+            >
               Sign up
             </Link>
           </div>

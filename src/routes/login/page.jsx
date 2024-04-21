@@ -4,12 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import apiRequest from "../../lib/apiRequest";
 import { AuthContext } from "../../context/AuthContext";
+import ThemeContext from "../../context/ThemeContext";
 
 function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const { updateUser } = useContext(AuthContext);
+  const { theme } = useContext(ThemeContext);
 
   const navigate = useNavigate();
 
@@ -42,7 +44,7 @@ function Login() {
   };
 
   return (
-    <div className="login">
+    <div className={`login  ${theme === "dark" ? "loginDark" : ""}`}>
       <div className="formContainer">
         <form onSubmit={handleSubmit}>
           <h1>Welcome back</h1>

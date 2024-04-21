@@ -138,6 +138,11 @@ nav {
       display: flex;
       align-items: center;
 
+      .signupDark {
+        background-color: #073dd0;
+        color: white;
+      }
+
       .register {
         background-color: #fece51;
       }
