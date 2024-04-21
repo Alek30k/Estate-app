@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./searchBar.scss";
 import { Link } from "react-router-dom";
+import ThemeContext from "../../context/ThemeContext";
 
 const types = ["buy", "rent"];
 
@@ -19,6 +20,8 @@ function SearchBar() {
   const handleChange = (e) => {
     setQuery((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className="searchBar">
@@ -58,8 +61,9 @@ function SearchBar() {
         />
         <Link
           to={`/list?type=${query.type}&city=${query.city}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`}
+          className={`  ${theme === "dark" ? "linkDark" : ""}`}
         >
-          <button>
+          <button className={`  ${theme === "dark" ? "buttonDark" : ""}`}>
             <img src="/search.png" alt="search" />
           </button>
         </Link>

@@ -11,7 +11,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
 
-  const { theme, handleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const { currentUser } = useContext(AuthContext);
   // const fetch = useNotificationStore((state) => state.fetch);
@@ -32,29 +32,9 @@ const Navbar = () => {
         <a href="/" className="logo">
           <img src="/logo.png" alt="logo" />
           <span>AleEstate</span>
-
-          {/* <input
-            type="radio"
-            name="theme"
-            id="light"
-            onClick={handleTheme}
-            value="light"
-          />
-          <label htmlFor="light">claro</label>
-          <input
-            type="radio"
-            name="theme"
-            id="dark"
-            onClick={handleTheme}
-            value="dark"
-          />
-          <label htmlFor="dark">oscuro</label> */}
           <ThemeSwitch />
         </a>
-        {/* <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Contact</a>
-        <a href="">Agents</a> */}
+
         {navLink.map((type) => (
           <Link key={type} to={`/${type === "home" ? "" : type}`}>
             <button
@@ -100,10 +80,6 @@ const Navbar = () => {
           />
         </div>
         <div className={open ? "menu active" : "menu"}>
-          {/* <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agents</a> */}
           {navLink.map((type) => (
             <Link key={type} to={`/${type === "home" ? "" : type}`}>
               <button
