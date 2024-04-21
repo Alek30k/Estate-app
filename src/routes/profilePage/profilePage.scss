@@ -33,6 +33,10 @@
         h1 {
           font-weight: 300;
         }
+        .buttonDark {
+          background-color: #073dd0;
+          color: white;
+        }
 
         button {
           padding: 12px 24px;
@@ -51,6 +55,11 @@
           display: flex;
           align-items: center;
           gap: 20px;
+        }
+
+        .buttonDark {
+          background-color: #f15380;
+          color: white;
         }
 
         button {

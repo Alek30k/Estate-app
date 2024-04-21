@@ -46,10 +46,14 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div className={`right  ${theme === "dark" && "leftTheme"}`}>
+      <div className="right">
         {currentUser ? (
           <div className="user">
-            <img src={currentUser.avatar || "/noavatar.jpeg"} alt="profile" />
+            <img
+              src={currentUser.avatar || "/noavatar.jpeg"}
+              alt="profile"
+              className={`${theme === "dark" ? "avatarDark" : ""}`}
+            />
             <span>{currentUser.username}</span>
 
             <Link

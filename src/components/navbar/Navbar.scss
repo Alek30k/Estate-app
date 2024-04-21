@@ -68,11 +68,6 @@ nav {
     }
   }
 
-  .leftTheme {
-    background-color: #040f2d;
-    color: white;
-  }
-
   .right {
     flex: 2;
     display: flex;
@@ -94,6 +89,10 @@ nav {
       display: flex;
       align-items: center;
       font-weight: bold;
+
+      .avatarDark {
+        border: 1px solid rgb(178, 163, 163);
+      }
 
       img {
         width: 40px;

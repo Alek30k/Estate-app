@@ -32,7 +32,9 @@ function ProfilePage() {
           <div className="title">
             <h1>User Information</h1>
             <Link to="/profile/update">
-              <button>Update Profile</button>
+              <button className={`  ${theme === "dark" ? "buttonDark" : ""}`}>
+                Update Profile
+              </button>
             </Link>
           </div>
           <div className="info">
@@ -46,12 +48,19 @@ function ProfilePage() {
             <span>
               E-mail: <b>{currentUser.email}</b>
             </span>
-            <button onClick={handleLogout}>Logout</button>
+            <button
+              onClick={handleLogout}
+              className={`  ${theme === "dark" ? "buttonDark" : ""}`}
+            >
+              Logout
+            </button>
           </div>
           <div className="title">
             <h1>My List</h1>
             <Link to="/add">
-              <button>Create New Post</button>
+              <button className={`  ${theme === "dark" ? "buttonDark" : ""}`}>
+                Create New Post
+              </button>
             </Link>
           </div>
           <Suspense fallback={<p>Loading...</p>}>
