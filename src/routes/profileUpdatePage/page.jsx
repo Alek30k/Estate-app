@@ -1,12 +1,10 @@
 import { useContext, useState } from "react";
 import "./profileUpdatePage.scss";
-// import apiRequest from "../../lib/apiRequest";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import UploadWidget from "../../components/uploadWidget/UploadWidget";
-import axios from "axios";
 import ThemeContext from "../../context/ThemeContext";
-// import UploadWidget from "../../components/uploadWidget/UploadWidget";
+import apiRequest from "../../lib/apiRequest";
 
 const ProfileUpdatePage = () => {
   const { currentUser, updateUser } = useContext(AuthContext);
@@ -24,19 +22,16 @@ const ProfileUpdatePage = () => {
     const { username, email, password } = Object.fromEntries(formData);
 
     try {
-      const res = await axios.put(
-        `https://estate-app-backend-rrai.onrender.com/api/users/${currentUser.id}`,
-        {
-          username,
-          email,
-          password,
-          avatar: avatar[0],
-        }
-      );
+      const res = await apiRequest.put(`/users/${currentUser.id}`, {
+        username,
+        email,
+        password,
+        avatar: avatar[0],
+      });
       updateUser(res.data);
       navigate("/profile");
     } catch (err) {
-      console.log(err.response.data.message);
+      console.log(err);
       setError(err.response.data.message);
     }
   };
