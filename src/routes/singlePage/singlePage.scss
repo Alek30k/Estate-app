@@ -1,5 +1,12 @@
 @import "../../responsive.scss";
 
+.singlePageDark {
+  display: flex;
+  height: 100%;
+  background-color: black;
+  color: white;
+}
+
 .singlePage {
   display: flex;
   height: 100%;
@@ -100,6 +107,13 @@
       }
     }
   }
+
+  .featuresDark {
+    // flex: 2;
+    background-color: black;
+    // height: 100%;
+    // overflow-y: scroll;
+  }
   .features {
     flex: 2;
     background-color: #fcf5f3;
@@ -152,6 +166,15 @@
         }
       }
 
+      .listVerticalDark {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+        background-color: black;
+        border-radius: 10px;
+      }
+
       .listVertical {
         display: flex;
         flex-direction: column;
@@ -160,6 +183,20 @@
         background-color: white;
         border-radius: 10px;
       }
+
+      .listHorizontalDark {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px;
+        background-color: black;
+        border: 1px solid gray;
+        border-radius: 10px;
+
+        img {
+          background-color: #fcf5f3;
+        }
+      }
+
       .listHorizontal {
         display: flex;
         justify-content: space-between;
@@ -168,12 +205,33 @@
         border-radius: 10px;
       }
 
+      .sizesDark {
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        border: 1px solid gray;
+      }
+
       .sizes {
         display: flex;
         justify-content: space-between;
 
         @include lg {
           font-size: 12px;
+        }
+
+        .sizeDark {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: black;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid gray;
+
+          img {
+            background-color: rgb(254, 252, 252);
+          }
         }
 
         .size {

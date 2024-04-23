@@ -6,12 +6,15 @@ import DOMPurify from "dompurify";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
+import ThemeContext from "../../context/ThemeContext";
 
 function SinglePage() {
   const post = useLoaderData();
   const [saved, setSaved] = useState(post.isSaved);
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const { theme } = useContext(ThemeContext);
 
   const handleSave = async () => {
     if (!currentUser) {
@@ -28,7 +31,7 @@ function SinglePage() {
   };
 
   return (
-    <div className="singlePage">
+    <div className={`singlePage ${theme === "dark" ? "singlePageDark" : ""}`}>
       <div className="details">
         <div className="wrapper">
           <Slider images={post.images} />
@@ -57,9 +60,13 @@ function SinglePage() {
         </div>
       </div>
       <div className="features">
-        <div className="wrapper">
+        <div className={`wrapper ${theme === "dark" ? "singlePageDark" : ""}`}>
           <p className="title">General</p>
-          <div className="listVertical">
+          <div
+            className={` ${
+              theme === "dark" ? "listVerticalDark" : "listVertical"
+            }`}
+          >
             <div className="feature">
               <img src="/utility.png" alt="" />
               <div className="featureText">
@@ -92,21 +99,25 @@ function SinglePage() {
           </div>
           <p className="title">Sizes</p>
           <div className="sizes">
-            <div className="size">
+            <div className={` ${theme === "dark" ? "sizeDark" : "size"}`}>
               <img src="/size.png" alt="" />
               <span>{post.postDetail.size} sqft</span>
             </div>
-            <div className="size">
+            <div className={` ${theme === "dark" ? "sizeDark" : "size"}`}>
               <img src="/bed.png" alt="" />
               <span>{post.bedroom} beds</span>
             </div>
-            <div className="size">
+            <div className={` ${theme === "dark" ? "sizeDark" : "size"}`}>
               <img src="/bath.png" alt="" />
               <span>{post.bathroom} bathroom</span>
             </div>
           </div>
           <p className="title">Nearby Places</p>
-          <div className="listHorizontal">
+          <div
+            className={` ${
+              theme === "dark" ? "listHorizontalDark" : "listHorizontal"
+            }`}
+          >
             <div className="feature">
               <img src="/school.png" alt="" />
               <div className="featureText">
