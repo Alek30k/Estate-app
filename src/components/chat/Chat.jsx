@@ -21,7 +21,8 @@ function Chat({ chats }) {
 
   const handleOpenChat = async (id, receiver) => {
     try {
-      const res = await apiRequest.get("/chats/" + id);
+      const res = await apiRequest("/chats/" + id);
+      console.log(res);
       if (!res.data.seenBy.includes(currentUser.id)) {
         decrease();
       }
