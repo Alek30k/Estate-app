@@ -3,7 +3,7 @@ import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import ThemeContext from "../../context/ThemeContext";
-// import { useNotificationStore } from "../../lib/notificationStore";
+import { useNotificationStore } from "../../lib/notificationStore";
 // import ThemeSwitch from "../../ThemeSwitch";
 import { ThemeSwitch } from "../../ThemeSwitch";
 
@@ -14,10 +14,10 @@ const Navbar = () => {
   const { theme } = useContext(ThemeContext);
 
   const { currentUser } = useContext(AuthContext);
-  // const fetch = useNotificationStore((state) => state.fetch);
-  // const number = useNotificationStore((state) => state.number);
+  const fetch = useNotificationStore((state) => state.fetch);
+  const number = useNotificationStore((state) => state.number);
 
-  // if (currentUser) fetch();
+  if (currentUser) fetch();
 
   const navLink = ["home", "about", "contact", "agents"];
 
@@ -56,17 +56,20 @@ const Navbar = () => {
             />
             <span>{currentUser.username}</span>
 
-            <Link
+            {/* <Link
               to="/profile"
               className={`  ${theme === "dark" ? "profileDark" : "profile"}`}
             >
               <span>Profile</span>
-            </Link>
-            {/* <Link to="/profile" className="profile">
+            </Link> */}
+            <Link
+              to="/profile"
+              className={`  ${theme === "dark" ? "profileDark" : "profile"}`}
+            >
               {number > 0 && <div className="notification">{number}</div>}
 
               <span>Profile</span>
-            </Link> */}
+            </Link>
           </div>
         ) : (
           <div className="logged">
