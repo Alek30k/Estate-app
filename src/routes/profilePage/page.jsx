@@ -10,6 +10,8 @@ import ThemeContext from "../../context/ThemeContext";
 function ProfilePage() {
   const data = useLoaderData();
 
+  console.log(data);
+
   const { updateUser, currentUser } = useContext(AuthContext);
 
   const { theme } = useContext(ThemeContext);
