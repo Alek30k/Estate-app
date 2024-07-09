@@ -14,9 +14,9 @@ function Layout() {
         <div className="navbar">
           <Navbar />
         </div>
-        <div className={`content ${theme}`}>
-          <Outlet />
-        </div>
+        {/* <div className={`content ${theme}`}> */}
+        <Outlet />
+        {/* </div> */}
       </div>
     </body>
   );
@@ -35,9 +35,9 @@ function RequireAuth() {
           <div className="navbar">
             <Navbar />
           </div>
-          <div className={`content ${theme}`}>
-            <Outlet />
-          </div>
+          {/* <div className={`content ${theme}`}> */}
+          <Outlet />
+          {/* </div> */}
         </div>
       </body>
     );
