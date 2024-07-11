@@ -1,4 +1,3 @@
-// import HomePage from "./routes/homePage/page";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout, RequireAuth } from "./layout";
 import Login from "./routes/login/page";
@@ -61,6 +60,7 @@ function App() {
         },
       ],
     },
+
     {
       path: "/",
       element: <RequireAuth />,
